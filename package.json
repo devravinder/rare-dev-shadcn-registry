@@ -9,7 +9,7 @@
     "build": "shadcn build --output ./public",
     "generateIndex": "node --no-warnings indexGenerator.js",
     "b:g": "pnpm run build && pnpm run generateIndex",
-    "deploy": "gh-pages --cname=rare-dev.paravartech.com --dist public --branch rare-dev-shadcn-registry"
+    "deploy": "pnpm run b:g && gh-pages --cname=rare-dev.paravartech.com --dist public --branch registry"
   },
   "keywords": [],
   "author": "",
