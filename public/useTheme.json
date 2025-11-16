@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "useTheme",
+  "type": "registry:block",
+  "title": "Use Theme",
+  "description": "Theme provider context & hook",
+  "files": [
+    {
+      "path": "registry/hooks/useTheme.tsx",
+      "content": "import {\n  createContext,\n  useContext,\n  useEffect,\n  useState,\n  type ReactNode,\n} from \"react\";\n\ntype Theme = \"dark\" | \"light\" | \"system\";\n\ntype ThemeProps = {\n  children: ReactNode;\n  defaultTheme?: Theme;\n  storageKey?: string;\n};\n\ntype ThemeState = {\n  theme: Theme;\n  setTheme: (theme: Theme) => void;\n};\n\nconst initialState: ThemeState = {\n  theme: \"system\",\n  setTheme: () => null,\n};\n\nconst ThemeContext = createContext<ThemeState>(initialState);\n\nexport const ThemeProvider = ({\n  children,\n  defaultTheme = \"system\",\n  storageKey = \"theme\",\n  ...props\n}: ThemeProps) => {\n  const [theme, setTheme] = useState(\n    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme\n  );\n\n  useEffect(() => {\n    const root = document.documentElement;\n\n    root.classList.remove(\"dark\", \"light\");\n\n    if (theme === \"system\") {\n      const systemTheme = window.matchMedia(\"(prefers-color-scheme: dark)\")\n        .matches\n        ? \"dark\"\n        : \"light\";\n\n      root.classList.add(systemTheme);\n      return;\n    }\n    root.classList.add(theme);\n  }, [theme]);\n\n  const value = {\n    theme,\n    setTheme: (theme: Theme) => {\n      localStorage.setItem(storageKey, theme);\n      setTheme(theme);\n    },\n  };\n\n  return (\n    <ThemeContext.Provider value={value} {...props}>\n      {children}\n    </ThemeContext.Provider>\n  );\n};\n\n// eslint-disable-next-line react-refresh/only-export-components\nexport const useTheme = () => {\n  const context = useContext(ThemeContext);\n\n  if (context === undefined)\n    throw new Error(\"useTheme must be used within a ThemeProvider\");\n\n  return context;\n};",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -1,55 +1,135 @@
-# rare-dev shadcn registry
+# 🧩 rare-dev Shadcn Registry
 
-Custom Shadcn registry
-[documentation](https://ui.shadcn.com/docs/directory#documentation)
+A **custom Shadcn UI registry** for managing and sharing components.
+Based on [Shadcn UI Registry Documentation](https://ui.shadcn.com/docs/directory#documentation).
 
-## Folder Structure
+---
 
-- `src`: for all the shadcn registry code
+## 📁 Folder Structure
 
-## To run locally
+```bash
+src/                # Contains all registry-related code
+registry/           # JSON and component files for registry entries
+public/             # Built files for deployment
+indexGenerator.js   # Optional index generator script
+```
 
-- `pnpm run dev`
+---
 
-## To deploy to Github pages
+## 🚀 Running Locally
 
-- `pnpm run d:registry`
-  - Note:- this command should be run from repo root folder i.e from react-ts-learn
+To start the registry server locally:
 
-## Issues
+```bash
+pnpm run dev
+```
 
-- Still gh-pages is publishing all the dot files
+---
 
-## Usage / Adding Files,Components
+## 🌐 Deploying to GitHub Pages
 
-1. Create file & add data under the `registry` folder
-2. add file information in `registry.json`
-3. Build files
-   - `shadcn build --output ./public` or `pnpm run build`
+Run the deployment script **from the repo root folder** (e.g., `react-ts-learn`):
 
-4. Generate Index (optional)
-   - `node --no-warnings indexGenerator.js` or `pnpm run generateIndex`
+```bash
+pnpm run d:registry
+```
 
-5. Run/deploy registry server
-   1. locally `pnpm run dev`
-   2. using hithub pages
-      - go to the root folder of the repo
-      - run `pnpm run deploy`
-6. use in anothe project(client)
-   0. It should be a shadcn project (recommonded)
+> ⚠️ **Note:** Currently, GitHub Pages publishes all dot files (`.*`). This issue is still open.
 
-   1. using directly from clinet project
-      - `pnpm dlx shadcn@latest add <hostname><file.json>`
-      - eg: `pnpm dlx shadcn@latest add https://rare-dev.paravartech.com/HelloWorld.json`
+---
 
-   2. by adding as registry
-      1. in client project add registry in components.json
+## 🧠 Usage Guide
 
-         ```json
-           "registries": {
-                  "@rare-dev":"https://rare-dev.paravartech.com/{name}.json"
-               }
-         ```
+### 1️⃣ Add New Files or Components
 
-      2. import with registry & file name
-         eg: `pnpm dlx shadcn@latest add @rare-dev/HelloWorld`
+1. Create a new file inside the `registry/` folder.
+   Example: `registry/HelloWorld.json`
+2. Add the file entry to `registry.json`.
+
+---
+
+### 2️⃣ Build Registry Files
+
+```bash
+pnpm run build
+# or
+shadcn build --output ./public
+```
+
+---
+
+### 3️⃣ Generate Index (Optional)
+
+If you want to regenerate the index file for all registry entries:
+
+```bash
+pnpm run generateIndex
+# or
+node --no-warnings indexGenerator.js
+```
+
+---
+
+### 4️⃣ Run or Deploy Registry Server
+
+* **Locally:**
+
+  ```bash
+  pnpm run dev
+  ```
+
+* **To GitHub Pages:**
+
+  ```bash
+  # Run from the root folder
+  pnpm run deploy
+  ```
+
+---
+
+## 🧩 Using the Registry in Another Project
+
+### Prerequisite
+
+The **client project** should be a **Shadcn UI-based project** (recommended).
+
+---
+
+### Option 1: Direct Import via URL
+
+```bash
+pnpm dlx shadcn@latest add https://rare-dev.paravartech.com/HelloWorld.json
+```
+
+---
+
+### Option 2: Add as a Custom Registry
+
+1. In your client project’s `components.json`, add the custom registry:
+
+   ```json
+   {
+     "registries": {
+       "@rare-dev": "https://rare-dev.paravartech.com/{name}.json"
+     }
+   }
+   ```
+
+2. Install components from the registry:
+
+   ```bash
+   pnpm dlx shadcn@latest add @rare-dev/HelloWorld
+   ```
+
+---
+
+## ⚙️ Known Issues
+
+* GitHub Pages currently publishes **dotfiles (`.*`)** — needs a cleanup or ignore configuration.
+
+---
+
+## 📚 Reference
+
+* [Shadcn UI Documentation](https://ui.shadcn.com/docs)
+* [Shadcn Directory Docs](https://ui.shadcn.com/docs/directory#documentation)

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "rare-dev",
-  "homepage": "http://localhost:7000",
+  "homepage": "https://rare-dev.paravartech.com",
   "items": [
     {
       "name": "HelloWorld",
@@ -12,6 +12,18 @@
         {
           "path": "registry/components/HelloWorld.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "useTheme",
+      "type": "registry:block",
+      "title": "Use Theme",
+      "description": "Theme provider context & hook",
+      "files": [
+        {
+          "path": "registry/hooks/useTheme.tsx",
+          "type": "registry:hook"
         }
       ]
     },
