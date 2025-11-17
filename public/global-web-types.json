@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "global-web-types",
+  "type": "registry:file",
+  "title": "Global types for web/browser",
+  "description": "Global types for web/browser",
+  "files": [
+    {
+      "path": "registry/types/global-web.d.ts",
+      "content": "\ndeclare global {\n  interface Window {\n    webkitAudioContext: typeof window.AudioContext\n  }\n}\n\nexport {};",
+      "type": "registry:file",
+      "target": "~/types/global.d.ts"
+    }
+  ]
+}

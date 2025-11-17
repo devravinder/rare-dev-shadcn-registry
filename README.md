@@ -1,4 +1,4 @@
-# 🧩 rare-dev Shadcn Registry
+# 🧩 rare-dev Shadcn Registry [🌐](https://registry.paravartech.com)
 
 A **custom Shadcn UI registry** for managing and sharing components.
 Based on [Shadcn UI Registry Documentation](https://ui.shadcn.com/docs/directory#documentation).
@@ -98,7 +98,7 @@ The **client project** should be a **Shadcn UI-based project** (recommended).
 ### Option 1: Direct Import via URL
 
 ```bash
-pnpm dlx shadcn@latest add https://rare-dev.paravartech.com/HelloWorld.json
+pnpm dlx shadcn@latest add https://registry.paravartech.com/HelloWorld.json
 ```
 
 ---
@@ -110,7 +110,7 @@ pnpm dlx shadcn@latest add https://rare-dev.paravartech.com/HelloWorld.json
    ```json
    {
      "registries": {
-       "@rare-dev": "https://rare-dev.paravartech.com/{name}.json"
+       "@rare-dev": "https://registry.paravartech.com/{name}.json"
      }
    }
    ```
