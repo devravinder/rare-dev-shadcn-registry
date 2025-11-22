@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "global-node-types",
+  "type": "registry:file",
+  "title": "Global types for node",
+  "description": "Global types for node",
+  "files": [
+    {
+      "path": "registry/types/global-node.d.ts",
+      "content": "declare global {\n  namespace NodeJS {\n    interface ProcessEnv {\n      GROK_API_KEY: string;\n      GROK_MODEL: string\n\n      GOOGLE_AI_STUDIO_API_KEY: string;\n      GOOGLE_EMBEDDINGS_MODEL: string\n\n      LOCAL_OLLAMA_BASE_URL: string\n      LOCAL_OLLAMA_MODEL: string\n      LOCAL_OLLAMA_EMBEDDING_MODEL: string\n\n      //\n      DATABASE_HOST: string;\n      DATABASE_PORT: string;\n      DATABASE_USER: string;\n      DATABASE_PASSWORD: string;\n      DATABASE_DB: string;\n\n      //\n      QDRANT_URL: string;\n      QDRANT_COLLECTION_NAME: string;\n      QDRANT_API_KEY: string\n\n      //\n      MESSAGE_STORAGE: \"PG\" | \"IN_MEMORY\";\n\n      MODELS_ENV: \"LOCAL\" | \"CLOUD\" | \"HYBRID\";\n\n\n      ///\n      SUPABSE_PROJECT_ID: string\n    }\n  }\n}\n\nexport {};\n",
+      "type": "registry:file",
+      "target": "~/types/global.d.ts"
+    }
+  ]
+}
