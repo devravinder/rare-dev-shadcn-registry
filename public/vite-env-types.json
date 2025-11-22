@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "vite-env-types",
+  "type": "registry:file",
+  "title": "Global types for vite env",
+  "description": "Global types for vite app",
+  "files": [
+    {
+      "path": "registry/types/vite-env.d.ts",
+      "content": "interface ImportMetaEnv {\n  readonly VITE_API_URL: string;\n  readonly VITE_SUPABASE_URL: string;\n  readonly VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY: string;\n  readonly VITE_SUPABASE_GOOGLE_AUTH_REDIRECT_URL: string;\n}\n",
+      "type": "registry:file",
+      "target": "~/types/vite-env.d.ts"
+    }
+  ]
+}
