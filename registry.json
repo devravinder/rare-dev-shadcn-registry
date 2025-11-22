@@ -53,15 +53,15 @@
       ]
     },
     {
-      "name": "global-web-types",
+      "name": "vite-env-types",
       "type": "registry:file",
-      "title": "Global types for web/browser",
-      "description": "Global types for web/browser",
+      "title": "Global types for vite env",
+      "description": "Global types for vite app",
       "files": [
         {
-          "path": "registry/types/global-web.d.ts",
+          "path": "registry/types/vite-env.d.ts",
           "type": "registry:file",
-          "target": "~/types/global.d.ts"
+          "target": "~/types/vite-env.d.ts"
         }
       ]
     },

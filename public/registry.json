@@ -16,6 +16,18 @@
       ]
     },
     {
+      "name": "ErrorBoundary",
+      "type": "registry:block",
+      "title": "Error Boundary",
+      "description": "ErrorBoundary",
+      "files": [
+        {
+          "path": "registry/components/ErrorBoundary.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "useTheme",
       "type": "registry:block",
       "title": "Use Theme",
@@ -35,6 +47,32 @@
       "files": [
         {
           "path": "registry/types/global-web.d.ts",
+          "type": "registry:file",
+          "target": "~/types/global.d.ts"
+        }
+      ]
+    },
+    {
+      "name": "global-web-types",
+      "type": "registry:file",
+      "title": "Global types for web/browser",
+      "description": "Global types for web/browser",
+      "files": [
+        {
+          "path": "registry/types/global-web.d.ts",
+          "type": "registry:file",
+          "target": "~/types/global.d.ts"
+        }
+      ]
+    },
+    {
+      "name": "global-node-types",
+      "type": "registry:file",
+      "title": "Global types for node",
+      "description": "Global types for node",
+      "files": [
+        {
+          "path": "registry/types/global-node.d.ts",
           "type": "registry:file",
           "target": "~/types/global.d.ts"
         }
