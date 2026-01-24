@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-css",
+  "type": "registry:file",
+  "title": "Cutsom Scroll",
+  "description": "Scroll customization",
+  "files": [
+    {
+      "path": "registry/css/scroll.css",
+      "content": "/* Scroll */\n\n/* works with tailwind css */\n\n@layer base {\n  ::-webkit-scrollbar {\n    @apply w-2 h-2;\n    \n  }\n  ::-webkit-scrollbar-track {\n    @apply bg-transparent;\n  }\n\n  ::-webkit-scrollbar-thumb {\n    @apply bg-primary rounded-full transition-colors;\n  }\n\n  ::-webkit-scrollbar-thumb:hover{\n    @apply bg-primary cursor-all-scroll;\n  }\n  /* *{ scrollbar-gutter: stable; } */\n}",
+      "type": "registry:file",
+      "target": "~/css/scroll.css"
+    }
+  ]
+}

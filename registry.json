@@ -90,6 +90,32 @@
           "target": "~/util/info.ts"
         }
       ]
+    },
+    {
+      "name": "util-types",
+      "type": "registry:file",
+      "title": "Utility types",
+      "description": "Utility types",
+      "files": [
+        {
+          "path": "registry/types/utility-types.d.ts",
+          "type": "registry:file",
+          "target": "~/types/utility-types.d.ts"
+        }
+      ]
+    },
+    {
+      "name": "scroll-css",
+      "type": "registry:file",
+      "title": "Cutsom Scroll",
+      "description": "Scroll customization",
+      "files": [
+        {
+          "path": "registry/css/scroll.css",
+          "type": "registry:file",
+          "target": "~/css/scroll.css"
+        }
+      ]
     }
   ]
 }
