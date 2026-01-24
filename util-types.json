@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "util-types",
+  "type": "registry:file",
+  "title": "Utility types",
+  "description": "Utility types",
+  "files": [
+    {
+      "path": "registry/types/utility-types.d.ts",
+      "content": "\ntype ArrayKeys<T> = {\n  [K in keyof T]: T[K] extends Array<unknown> ? K : never;\n}[keyof T];\n\n\ntype Key<T>= keyof T \ntype ValueType<T> =T[keyof T] ",
+      "type": "registry:file",
+      "target": "~/types/utility-types.d.ts"
+    }
+  ]
+}
